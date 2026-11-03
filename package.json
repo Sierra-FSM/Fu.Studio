@@ -1,0 +1,33 @@
+{
+  "name": "fu-shimin-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "npm@11.19.1",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc -b",
+    "test": "node --test tests/pdf-sync.test.mjs && vitest run",
+    "update:pdf": "node scripts/update-pdf.mjs",
+    "check:assets": "node scripts/check-assets.mjs",
+    "prebuild": "node scripts/prepare-pdf-viewer.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "motion": "^12.0.0",
+    "pdfjs-dist": "^6.4.299",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "typescript": "~5.8.0",
+    "vite": "^6.3.0",
+    "vitest": "^3.2.0"
+  }
+}

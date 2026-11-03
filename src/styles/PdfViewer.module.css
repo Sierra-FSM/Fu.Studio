@@ -1,0 +1,18 @@
+.viewer{display:flex;flex-direction:column;min-height:0;flex:1;background:#292929;color:#eee;overflow:hidden}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px;padding:0 12px;background:#393939;border-bottom:1px solid #555;flex:none;font-size:12px}
+.toolbar button{background:transparent;color:#eee;min-width:36px;min-height:38px;border-radius:4px;font-size:18px;padding:3px 8px}.toolbar button:hover{background:#ffffff20}.toolbar button:focus-visible,.thumbnail:focus-visible{outline:2px solid #c0d8ff;outline-offset:-2px}.toolbar button:disabled{opacity:.3}
+.pager,.zoom{display:flex;align-items:center;gap:6px}.pager input{width:40px;background:#252525;border:1px solid #666;color:#fff;text-align:center;font:inherit;padding:4px;appearance:textfield}.pager input::-webkit-inner-spin-button{appearance:none}.zoom>span{min-width:40px;text-align:center;font-variant-numeric:tabular-nums}.toolbar .fit{font-size:11px;border:1px solid #777;margin-left:7px;padding:4px 10px}
+.body{flex:1;min-height:0;display:flex;overflow:hidden}.sidebar{width:140px;flex:none;overflow:auto;border-right:1px solid #505050;background:#252525;padding:14px 9px;overscroll-behavior:contain}
+.thumbnail{width:100%;display:flex;flex-direction:column;align-items:center;gap:7px;background:none;color:#ddd;padding:6px 3px 12px;font-size:10px}.thumbnail>div{border:3px solid transparent;padding:3px}.thumbnail[aria-current='page']>div{border-color:#a8c8ff}.thumbnail:hover>div{background:#ffffff16}.thumbnail .canvas{max-width:100%;height:auto!important;box-shadow:0 2px 5px #0005}.placeholder{display:block;width:92px;height:75px;background:#454545}
+.pageHost{flex:1;min-width:0;min-height:0;overflow:auto;overscroll-behavior:contain;position:relative}.pageHost:focus-visible{outline:1px solid #a8c8ff;outline-offset:-2px}.pageStage{display:flex;align-items:center;justify-content:center;box-sizing:border-box;padding:12px}.canvas{display:block;flex:none;background:white;box-shadow:0 3px 10px #0005}.message{padding:25px;text-align:center;font-size:13px;line-height:1.6}.message a{color:#bdd5ff}
+@media(max-width:767px){.toolbar{padding:0 5px;gap:2px;font-size:10px;flex-wrap:wrap}.toolbar button{min-width:30px;padding:2px 5px;font-size:16px}.pager,.zoom{gap:2px}.pager input{width:30px}.toolbar .fit{font-size:9px;padding:3px 6px;margin-left:1px}.sidebar{width:80px;padding:10px 3px}.thumbnail{padding:3px 0 10px}.thumbnail>div{max-width:100%;padding:1px;border-width:2px}.placeholder{width:58px;height:48px}}
+
+/* Continuous pages use native wheel, trackpad and touch scrolling. */
+.pageStack{display:flex;flex-direction:column;align-items:center;gap:20px;padding:12px;box-sizing:border-box;min-height:100%}
+.scrollPage{position:relative;flex:none;background:#fff;box-shadow:0 3px 10px #0005;overflow:hidden}
+.scrollPage .canvas{box-shadow:none}.pagePlaceholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#777;font-size:12px;margin:0;text-align:center;padding:16px}
+.pageHost{overflow-anchor:none;scroll-behavior:auto;touch-action:pan-x pan-y pinch-zoom}
+.pageHost,.sidebar{color-scheme:dark;scrollbar-color:#666 #292929;scrollbar-width:thin}
+.pageHost::-webkit-scrollbar,.sidebar::-webkit-scrollbar{width:10px;height:10px}
+.pageHost::-webkit-scrollbar-track,.sidebar::-webkit-scrollbar-track,.pageHost::-webkit-scrollbar-corner,.sidebar::-webkit-scrollbar-corner{background:#292929}
+.pageHost::-webkit-scrollbar-thumb,.sidebar::-webkit-scrollbar-thumb{background:#666;border:2px solid #292929;border-radius:6px}

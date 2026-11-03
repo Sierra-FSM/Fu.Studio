@@ -1,0 +1,158 @@
+{
+  "board": {
+    "source": "白墙与软木板背景.png",
+    "original": [
+      1536,
+      1024
+    ],
+    "crop": [
+      0,
+      0,
+      1536,
+      1024
+    ]
+  },
+  "about-entry": {
+    "source": "个人卡片.png",
+    "original": [
+      1122,
+      1402
+    ],
+    "crop": [
+      234,
+      94,
+      878,
+      1213
+    ]
+  },
+  "about-page": {
+    "source": "about-card.png",
+    "original": [
+      2380,
+      1684
+    ],
+    "crop": [
+      0,
+      0,
+      2380,
+      1684
+    ]
+  },
+  "folder-front": {
+    "source": "folder-front.png",
+    "original": [
+      1122,
+      1402
+    ],
+    "crop": [
+      0,
+      0,
+      1122,
+      1402
+    ]
+  },
+  "folder-back": {
+    "source": "folder-back.png",
+    "original": [
+      1122,
+      1402
+    ],
+    "crop": [
+      0,
+      0,
+      1122,
+      1402
+    ]
+  },
+  "folder-clip": {
+    "source": "夹子.png",
+    "original": [
+      1402,
+      1122
+    ],
+    "crop": [
+      157,
+      91,
+      1242,
+      1008
+    ]
+  },
+  "research": {
+    "source": "便利贴.png",
+    "original": [
+      1254,
+      1254
+    ],
+    "crop": [
+      0,
+      0,
+      1254,
+      1254
+    ]
+  },
+  "skill-0": {
+    "source": "Prototyping.png",
+    "original": [
+      1475,
+      1067
+    ],
+    "crop": [
+      130,
+      63,
+      1386,
+      1067
+    ]
+  },
+  "skill-1": {
+    "source": "UI Design.png",
+    "original": [
+      1312,
+      1199
+    ],
+    "crop": [
+      152,
+      61,
+      1151,
+      1152
+    ]
+  },
+  "skill-2": {
+    "source": "Modeling.png",
+    "original": [
+      1312,
+      1199
+    ],
+    "crop": [
+      200,
+      52,
+      1139,
+      1157
+    ]
+  },
+  "skill-3": {
+    "source": "Coding.png",
+    "original": [
+      1536,
+      1024
+    ],
+    "crop": [
+      284,
+      70,
+      1362,
+      1010
+    ]
+  },
+  "skill-4": {
+    "source": "Hands-on Execution.png",
+    "original": [
+      1312,
+      1199
+    ],
+    "crop": [
+      154,
+      86,
+      1216,
+      1162
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+.envelope{position:relative;width:100%;aspect-ratio:1632/832;perspective:1200px;isolation:isolate;filter:drop-shadow(2px 8px 5px #31261a25)}
+.layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none}
+.back{z-index:0}.front{z-index:3}
+/* All v2 layers use the same crop; the physical fold is horizontal at y=16px. */
+.hinge{position:absolute;inset:0;z-index:5;transform:none;transform-origin:50% 1.923077%;transform-style:preserve-3d;pointer-events:none}
+.flap{position:absolute;inset:0;transform-origin:50% 1.923077%;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.3,.6,.2,1)}
+.outer,.inner{position:absolute;inset:0;backface-visibility:hidden;transform-origin:50% 1.923077%;transform-style:preserve-3d}
+.inner{transform:rotateX(180deg)}
+.outer>.layer,.inner>.layer{transform:none;transform-origin:50% 1.923077%}
+.envelope:not([data-phase='0']) .flap{transform:rotateX(180deg)}
+.envelope[data-phase='2'] .hinge,.envelope[data-phase='3'] .hinge{z-index:1}
+.paper{position:absolute;left:8.762%;top:13.582%;width:82.475%;height:72.837%;z-index:2;transform:translateY(0);transition:transform .65s cubic-bezier(.25,.7,.25,1),left .45s,width .45s,height .45s;filter:drop-shadow(1px 6px 8px #30271c30)}
+.paperTexture{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.envelope[data-phase='2'] .paper{transform:translateY(-140%)}
+.envelope[data-phase='3'] .paper{z-index:6;left:4%;width:92%;height:110%;transform:translateY(-65%)}
+.contactText{position:absolute;inset:8% 8% 6%;opacity:0;transition:opacity .25s .4s;overflow:auto;overscroll-behavior:contain;transform:none}
+.envelope[data-phase='3'] .contactText{opacity:1}
+.eyebrow{font-size:8px;letter-spacing:1.4px;margin:0 0 10px}.contactText h2{font-size:clamp(30px,4.2vw,53px);font-weight:850;letter-spacing:-1.7px;line-height:1;margin:0 0 18px}
+.contactText dl{margin:0}.row{display:grid;grid-template-columns:20% 80%;align-items:center;border-top:1px solid #0b2d6344;min-height:45px;gap:0}.row dt{font-size:11px;font-weight:800}.row dd{margin:0;min-width:0;font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:4px}.row a{overflow-wrap:anywhere;text-decoration:none}.row button{background:none;min-width:44px;min-height:44px;flex:none;font-size:18px;padding:0}.status{font-size:9px;margin:10px 0 0;min-height:1.5em}
+@media(max-width:767px){.envelope[data-phase='3'] .paper{height:190%;left:0;width:100%;transform:translateY(-55%)}.contactText{inset:8% 8% 6%;transform:none}.eyebrow{font-size:6px;letter-spacing:1px}.contactText h2{font-size:32px;margin-bottom:14px}.row{grid-template-columns:21% 79%;min-height:48px}.row dt{font-size:9px}.row dd{font-size:11px}.status{font-size:8px}.row button{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.flap,.paper,.contactText{transition:none}}
+/* Switch surface texture at the edge-on point; both faces share exactly the same geometry. */
+.outer,.inner{backface-visibility:visible;transform:none}
+.outer{opacity:1}.inner{opacity:0}
+.envelope:not([data-phase='0']) .outer{opacity:0;transition:opacity 0s .275s}
+.envelope:not([data-phase='0']) .inner{opacity:1;transition:opacity 0s .275s}
+@media(prefers-reduced-motion:reduce){.outer,.inner{transition:none!important}}

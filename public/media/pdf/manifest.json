@@ -1,0 +1,28 @@
+{
+  "files": {
+    "1.pdf": {
+      "hash": "62c9da8fe7825d2e",
+      "bytes": 4352211
+    },
+    "2.pdf": {
+      "hash": "099b3bff242c0ad5",
+      "bytes": 6390368
+    },
+    "3.pdf": {
+      "hash": "30705f0a6b59dc1b",
+      "bytes": 6086626
+    },
+    "4.pdf": {
+      "hash": "b8a4100ea128acb8",
+      "bytes": 5991566
+    },
+    "5.pdf": {
+      "hash": "d3bc9b09ea22ae0a",
+      "bytes": 7075964
+    },
+    "6.pdf": {
+      "hash": "6edea99db5138355",
+      "bytes": 5899207
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.pinned{position:absolute}.entrance,.swing{width:100%;height:100%}.swing{transform-origin:50% 1%}.about{left:10%;top:10%;width:18%}.folder{left:37%;top:17%;width:28%}.research{left:70%;top:9%;width:23%}.keychain{left:9%;top:66%;width:25%;aspect-ratio:1.2}.contact{left:71%;top:67%;width:22%}.folder>:global(.pin){top:-7%}.research>:global(.pin){left:calc(51% - 12px);top:12%}.keychain>:global(.pin){top:-14%;left:calc(50% - 13px)}.objectButton{display:block;position:relative;background:none;border:0;padding:0;width:100%;text-align:left;text-decoration:none}.aboutImage{display:block;width:100%;filter:drop-shadow(3px 8px 5px #31261a30)}.objectCaption{display:flex;align-items:center;justify-content:space-between;font-size:8px;font-weight:600;letter-spacing:1.3px;margin-top:12px;white-space:nowrap}.objectCaption>span{font-size:15px}.folderStage{position:relative;aspect-ratio:1122/1402;perspective:1000px;filter:drop-shadow(3px 9px 6px #34251930)}.folderBack,.folderFront{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}.folderBack{transform:translate(3%,4%) scale(1.07,.99)}.folderFront{transform-origin:9% 50%;transition:transform .4s cubic-bezier(.2,.75,.3,1);backface-visibility:hidden;z-index:5}.previewPaper{position:absolute;width:77%;height:auto;left:14%;top:20%;border:5px solid #f5f1e8;box-shadow:3px 4px 9px #0002;transition:transform .4s cubic-bezier(.2,.75,.3,1)}.paper0{transform:rotate(3deg);top:21%}.paper1{transform:rotate(6deg);top:25%}.paper2{transform:rotate(9deg);top:29%}.folderLink:is(:hover,:focus-visible) .folderFront{transform:rotateY(-22deg)}.folderLink:is(:hover,:focus-visible) .paper0{transform:translateX(14.4%) rotate(2deg)}.folderLink:is(:hover,:focus-visible) .paper1{transform:translateX(25%) rotate(6deg);transition-delay:.05s}.folderLink:is(:hover,:focus-visible) .paper2{transform:translateX(21.7%) rotate(10deg);transition-delay:.1s}.researchButton{transform:rotate(4deg);filter:drop-shadow(2px 6px 4px #33251525)}.researchButton>img{width:100%;display:block}.researchLabel{position:absolute;left:21%;top:33%;font-size:clamp(13px,2.05vw,30px);font-weight:800;line-height:1.08;letter-spacing:-.7px;transform:rotate(4deg)}.researchLabel>span{display:block;font-size:clamp(6px,.63vw,10px);font-weight:500;line-height:1.7;letter-spacing:1px;margin-top:13%}.contactButton{transform:rotate(-4deg)}.contactButton .objectCaption{margin-top:18px}.keychainStage{position:relative;width:100%;height:100%}.charm{position:absolute;left:50%;top:20%;padding:0;background:none;width:49%;filter:drop-shadow(2px 4px 2px #352c2430);z-index:2}.charm:focus-visible{z-index:8}.charm img{display:block;width:100%;height:auto;pointer-events:none}.charm0{translate:-94% -10%;z-index:4}.charm1{translate:-52% -7%;z-index:5}.charm2{translate:-48% -7%;z-index:6}.charm3{translate:-38% -7%;z-index:4}.charm4{translate:-29% -9%;z-index:3}.skillLabel{position:absolute;top:108%;left:50%;transform:translateX(-50%);white-space:nowrap;min-width:135px;text-align:center;font-size:9px;letter-spacing:.6px;line-height:1.5;padding:6px 10px;background:#f5f1e8e8;box-shadow:0 2px 6px #0001;border:1px solid #c9bca8;border-radius:2px;pointer-events:none}.skillLabel>span{display:block;font-size:6px;letter-spacing:1.2px;margin-top:3px;opacity:.7}
+.envelope{position:relative;width:100%;aspect-ratio:1.65;perspective:1000px;isolation:isolate;filter:drop-shadow(2px 8px 5px #31261a25)}.envelopeBack{position:absolute;inset:0;background:linear-gradient(135deg,#ddd3bd,#f7f2e6 50%,#e6dcc7);border:1px solid #c9bca0;border-radius:4px}.envelopeFront{position:absolute;inset:0;z-index:3;background:linear-gradient(32deg,transparent 49.5%,#c7b99e66 49.8%,#fcf7eb 50.2%) left/50% 100% no-repeat,linear-gradient(-32deg,transparent 49.5%,#c7b99e66 49.8%,#f5efdf 50.2%) right/50% 100% no-repeat,linear-gradient(to bottom,#f1eadb,#e4d8bf);clip-path:polygon(0 0,50% 47%,100% 0,100% 100%,0 100%);border:1px solid #c3b69c;border-radius:3px}.envelopeFront span{position:absolute;left:0;right:0;bottom:15%;text-align:center;font-weight:850;font-size:clamp(13px,2.2vw,32px);letter-spacing:-.04em}.flap{position:absolute;inset:0;transform-origin:50% 0;transform-style:preserve-3d;transition:transform .4s cubic-bezier(.3,.6,.2,1);z-index:4}.flapOutside,.flapInside{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 53%);background:linear-gradient(145deg,#fffaf0,#ede5d5);backface-visibility:hidden}.flapOutside{filter:drop-shadow(0 3px 1px #38281730)}.flapInside{transform:rotateY(180deg);background:linear-gradient(145deg,#e9deca,#f7efe0)}.expanded .envelopeFront span{font-size:clamp(25px,5vw,55px)}.expanded[data-phase='1'] .flap,.expanded[data-phase='2'] .flap{transform:rotateX(180deg);z-index:1}.contactCard{position:absolute;left:6%;width:88%;height:96%;bottom:5%;z-index:2;padding:6% 6% 3%;background:linear-gradient(110deg,#faf7ee,#eee6d6);border:1px solid #d7cbb6;box-shadow:0 7px 22px #32281b22;transform:translateY(7%);transition:transform .45s cubic-bezier(.2,.7,.2,1);overflow:auto}.expanded[data-phase='2'] .contactCard{transform:translateY(-52%)}.cardEyebrow{font-size:8px;letter-spacing:1.7px;margin:0 0 8px}.contactCard h2{font-size:clamp(30px,6vw,63px);letter-spacing:-2px;margin:0 0 6%;line-height:1}.contactCard dl{margin:0}.contactRow{display:grid;grid-template-columns:22% 78%;gap:3px;border-top:1px solid #0b2d6344;padding:9px 0}.contactRow dt{font-size:clamp(9px,1.2vw,13px);font-weight:800}.contactRow dd{margin:0;font-size:clamp(10px,1.5vw,15px);display:flex;align-items:center;justify-content:space-between;gap:4px;min-width:0}.contactRow dd>a{text-decoration:none;overflow-wrap:anywhere}.copyButton{padding:2px 4px;background:none;font-size:17px;line-height:1}.copyStatus{font-size:9px;margin:10px 0 0;min-height:1.5em;opacity:.7}
+@media(max-width:1100px) and (min-width:768px){.about{width:20%;left:7%}.folder{width:30%;left:35%}.research{width:25%;left:70%}.contact{width:25%;left:70%;top:65%}.keychain{width:28%;left:6%;top:68%}.objectCaption{font-size:6px;letter-spacing:.7px}.skillLabel{top:105%}}
+@media(max-width:767px){.pinned{position:relative!important;left:auto!important;top:auto!important;width:100%}.about{width:62%;order:0}.folder{width:78%;order:1;margin-top:4px}.keychain{width:94%;aspect-ratio:1.15;order:2;margin-top:35px;margin-bottom:24px}.research{width:80%;order:3}.contact{width:78%;order:4;margin-top:10px}.objectCaption{font-size:8px;letter-spacing:1px}.researchLabel{font-size:26px}.researchLabel>span{font-size:9px}.skillLabel{font-size:11px;top:105%}.skillLabel>span{font-size:8px}.envelopeFront span{font-size:27px}.expanded .envelopeFront span{font-size:35px}.contactCard{height:110%;padding:6% 5%}.contactCard h2{font-size:36px;letter-spacing:-1px;margin-bottom:20px}.contactRow{grid-template-columns:22% 78%;padding:10px 0}.contactRow dd{font-size:11px}.contactRow dt{font-size:10px}.cardEyebrow{font-size:6px}.copyButton{font-size:18px}.contactCard .copyStatus{font-size:8px}.expanded[data-phase='2'] .contactCard{transform:translateY(-55%)}.folderLink:hover .folderFront{transform:none}.folderLink:focus-visible .folderFront{transform:rotateY(-22deg)}}
+@media(prefers-reduced-motion:reduce){.flap,.contactCard,.folderFront,.previewPaper{transition:none}.folderLink:is(:hover,:focus-visible) .folderFront{transform:none}}
+
+.expanded[data-phase="2"] .contactCard{z-index:6;transition:transform .45s cubic-bezier(.2,.7,.2,1),z-index 0s .35s}
+
+.expanded .copyButton{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+@media(max-width:767px){.contactCard{height:155%}}
+/* Keep the full contact text visible, and the compact keychain inside the board. */
+.expanded .contactCard{height:116%}
+@media(min-width:768px){.about{top:8%;width:16%}.keychain{left:10%;top:65%;width:22%}.keychain .charm1{width:43%}.keychain .charm2,.keychain .charm4{width:42%}.skillLabel{top:96%}}
+@media(max-width:767px){.expanded .contactCard{height:155%}}
+
+.charm:hover{z-index:8}
+
+/* Revision: resize about/research/folder around their real hardware anchors. */
+.about{left:11.6%;top:7%;width:12.8%;--anchor-x:50.6%;--anchor-y:2.5%}
+.folder{left:32.8%;top:17%;width:36.4%;--anchor-x:50%;--anchor-y:-5.4%}
+.research{left:72.1%;top:9.4%;width:18.4%;--anchor-x:52.2%;--anchor-y:11.5%}
+.about>.entrance>.swing,.folder>.entrance>.swing,.research>.entrance>.swing{transform-origin:var(--anchor-x) var(--anchor-y)}
+.about>:global(.pin),.folder>:global(.pin),.research>:global(.pin){left:calc(var(--anchor-x) - 12.35px);top:calc(var(--anchor-y) - 11.05px)}
+.researchButton{transform:none}
+.folderClip{position:absolute;width:38%;left:31%;top:-12%;z-index:12;pointer-events:none;filter:drop-shadow(1px 3px 2px #0003)}
+.keychain{aspect-ratio:1.25;--anchor-x:50%;--anchor-y:-1%}
+.keychain>.entrance>.swing{transform-origin:50% -1%}
+.keychain>:global(.pin){left:calc(50% - 12.35px);top:calc(-1% - 11.05px)}
+.keychainStage{aspect-ratio:1.25;height:auto}
+.keychainCanvas{position:relative;width:400px;height:320px;transform-origin:0 0;zoom:var(--keychain-scale,1)}
+.mainRing{position:absolute;inset:0;width:400px;height:320px;z-index:1;pointer-events:none;overflow:visible;filter:drop-shadow(1px 2px 1px #30271c44)}
+.ringFront{z-index:10}
+.charmAssembly{position:absolute;width:0;height:0;transform-origin:0 0;filter:drop-shadow(1px 3px 1px #30271c33)}
+.shortChain{position:absolute;left:-10px;top:0;width:20px;pointer-events:none}
+.newCharm{position:absolute;padding:0;background:none;cursor:pointer;mask-image:var(--charm-mask);mask-size:100% 100%;mask-repeat:no-repeat}
+.newCharm img{display:block;width:100%;pointer-events:none}
+.newCharm:focus-visible{filter:brightness(1.14);outline:none}
+.holeLink{position:absolute;left:-9px;top:0;width:18px;height:22px;pointer-events:none;z-index:2}
+.keychain .skillLabel{top:100%;z-index:20}
+@media(min-width:768px) and (max-width:1100px){.folder{width:39%;left:30.5%}.research{width:20%;left:71.3%}}
+@media(max-width:767px){.about{width:49.6%}.research{width:64%}.folder{width:101.4%}.keychain{width:100%;margin-top:45px;margin-bottom:50px}.researchLabel{font-size:21px}.researchLabel>span{font-size:7.2px}}
+
+/* Card enlargement preserves the existing tack center. */
+.about{width:14.08%;left:10.9523%;top:6.9%}
+.research{top:11.9%}
+.researchLabel{font-size:clamp(11px,1.7425vw,25.5px)}
+.researchLabel>span{font-size:clamp(6px,.63vw,10px)}
+.research .objectCaption{margin-top:12px}
+/* Ring diameter is 88/400 of the keychain width; half its diameter = 11% of width. */
+.contact{--anchor-x:53%;--anchor-y:3.5%}
+.contact>:global(.pin){left:calc(var(--anchor-x) - 12.35px);top:calc(var(--anchor-y) - 11.05px)}
+.contact>.entrance>.swing{transform-origin:var(--anchor-x) var(--anchor-y)}
+@media(min-width:768px){.keychain{margin-top:0;transform:translateY(-13.75%)}}
+@media(max-width:767px){.about{width:54.56%}.research{margin-top:12px}.researchLabel{font-size:17.85px}.keychain{margin-top:45px;transform:translateY(-13.75%);margin-bottom:50px}.researchLabel>span{font-size:7.2px}}
+
+.research{--anchor-y:calc(11.5% - 3.45px)}
+.contactButton{transform:none}
+.contact{--anchor-y:6.1%}
+
+/* Align the complete label block to the white sheet, excluding the caption below it. */
+.researchLabel{left:53%;top:calc(50% - 15px);width:65%;text-align:center;transform:translate(-50%,-50%) rotate(6.8deg);transform-origin:50% 50%}
+.researchLabel>span{margin-top:clamp(8px,1vw,12px)}
+
+/* Smaller clip keeps its lower jaw on the folder; pin meets the circular hole. */
+.folderClip{width:26.6%;left:36.7%;top:-4.3%}
+.folder{--anchor-y:0%}
+.contact{--anchor-x:50%;--anchor-y:1.8%}
