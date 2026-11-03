@@ -87,7 +87,7 @@ export default function PdfViewer({url,title}:{url:string;title:string}){
     <div className={styles.body}>
       {sidebar&&<aside className={styles.sidebar} aria-label="PDF page previews">{doc&&Array.from({length:doc.numPages},(_,i)=><Thumbnail key={i} doc={doc} number={i+1} selected={number===i+1} choose={()=>goTo(i+1)}/>)}</aside>}
       <div ref={host} className={styles.pageHost} onScroll={updateReading} tabIndex={0} aria-label={`${title} PDF pages`}>
-        {error?<p className={styles.message} role="alert">{error} <a href={url} target="_blank" rel="noopener noreferrer">Open PDF ↗</a></p>:doc&&pages.length&&size.width>0?<div className={styles.pageStack} style={{minWidth:Math.max(size.width,...pages.map((p,i)=>p.width*scales[i]+24)),paddingBottom:Math.max(12,size.height-pages[pages.length-1].height*scales[scales.length-1]-12)}}>{pages.map((p,i)=><ScrollPage key={i} doc={doc} number={i+1} scale={scales[i]} info={p} root={host.current} title={title}/>)}</div>:<p className={styles.message} role="status">Loading PDF…</p>}
+        {error?<p className={styles.message} role="alert">{error} <a href={url} target="_blank" rel="noopener noreferrer">Open PDF ↗</a></p>:doc&&pages.length&&size.width>0?<div className={styles.pageStack} style={{minWidth:Math.max(size.width,...pages.map((p,i)=>p.width*scales[i]+24)),paddingBottom:Math.max(12,size.height-pages[pages.length-1].height*scales[scales.length-1]-12)}}>{pages.map((p,i)=><ScrollPage key={i} doc={doc} number={i+1} scale={scales[i]} info={p} root={host.current} title={title}/>)}</div>:<p className={styles.message} role="status">Loading PDF… This may take about 5 seconds.</p>}
       </div>
     </div>
   </div>;
