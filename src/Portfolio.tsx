@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type MouseEvent, type PointerEvent } from 
 import { Link } from 'react-router';
 import { motion, useMotionValue, useMotionTemplate, useSpring, useReducedMotion } from 'motion/react';
 import { projects, media, type Project } from './content';
-import { viewMemory, type Overlay } from './state';
+import { viewMemory } from './state';
 import styles from './styles/Portfolio.module.css';
 import FoldText from './components/FoldText';
 
@@ -10,7 +10,7 @@ function Text({text,delay=0,splitBy='word'}:{text:string;delay?:number;splitBy?:
   return <FoldText text={text} splitBy={splitBy} trigger="scroll" delay={delay} duration={.5} stagger={splitBy==='char'?.03:.045} foldAngle={75} creaseShading={.22}/>;
 }
 
-function Cover({ project, activate, open, isDragging }: { project:Project; activate:(id:string|null,mode:'hover'|'focus')=>void; open:(o:Overlay)=>void; isDragging:()=>boolean }) {
+function Cover({ project, activate, isDragging }: { project:Project; activate:(id:string|null,mode:'hover'|'focus')=>void; isDragging:()=>boolean }) {
   const reduce=useReducedMotion(); const x=useMotionValue(0);const y=useMotionValue(0);
   const rx=useSpring(x,{stiffness:190,damping:23});const ry=useSpring(y,{stiffness:190,damping:23});
   const gx=useMotionValue(50);const gy=useMotionValue(50);
@@ -25,11 +25,10 @@ function Cover({ project, activate, open, isDragging }: { project:Project; activ
   };
   const click=(e:MouseEvent<HTMLAnchorElement>)=>{
     if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
-    e.preventDefault();if(e.detail>0 && isDragging())return;
-    viewMemory.focusId=`project-${project.id}`;open({kind:'pdf',id:project.id});
+    if(e.detail>0 && isDragging())e.preventDefault();
   };
   return <article className={styles.project}>
-    <a id={`project-${project.id}`} className={styles.coverLink} href={project.pdf} aria-label={`Read ${project.title} PDF`} aria-describedby={`desc-${project.id}`} onClick={click} onPointerMove={move} onMouseEnter={()=>{setHover(true);activate(project.id,'hover');}} onMouseLeave={()=>{setHover(false);activate(null,'hover');x.set(0);y.set(0);gx.set(50);gy.set(50);}} onFocus={()=>{setHover(true);activate(project.id,'focus');if(!reduce){x.set(-2);y.set(2);}}} onBlur={()=>{setHover(false);activate(null,'focus');x.set(0);y.set(0);}}>
+    <a id={`project-${project.id}`} className={styles.coverLink} href={project.pdf} target="_blank" rel="noopener noreferrer" aria-label={`Read ${project.title} PDF`} aria-describedby={`desc-${project.id}`} onClick={click} onPointerMove={move} onMouseEnter={()=>{setHover(true);activate(project.id,'hover');}} onMouseLeave={()=>{setHover(false);activate(null,'hover');x.set(0);y.set(0);gx.set(50);gy.set(50);}} onFocus={()=>{setHover(true);activate(project.id,'focus');if(!reduce){x.set(-2);y.set(2);}}} onBlur={()=>{setHover(false);activate(null,'focus');x.set(0);y.set(0);}}>
       <motion.div className={styles.coverMotion} style={{rotateX:rx,rotateY:ry}} animate={{y:hover&&!reduce?-6:0,scale:hover&&!reduce?1.0275:1,boxShadow:hover&&!reduce?'0 13.5px 22.5px rgba(20,40,75,.215)':'0 7px 15px rgba(20,36,58,.11)'}} transition={{type:'spring',stiffness:190,damping:23}}>
         <img src={project.cover} srcSet={`${media(`project-${project.order}-480.webp`)} 480w, ${project.cover} 960w, ${media(`project-${project.order}-1440.webp`)} 1440w`} sizes="(max-width:767px) 78vw, 240px" width="2078" height="1684" alt={`${project.title} project cover`} loading={project.order<4?'eager':'lazy'} />
         <motion.span className={styles.reflection} style={{background:highlight}} animate={{opacity:hover&&!reduce?.35:0}} transition={{duration:.18}} aria-hidden="true"/>
@@ -39,7 +38,7 @@ function Cover({ project, activate, open, isDragging }: { project:Project; activ
     <p id={`desc-${project.id}`} className={styles.mobileDescription}><Text text={project.description}/></p>
   </article>;
 }
-export default function Portfolio({open}:{open:(o:Overlay)=>void}) {
+export default function Portfolio() {
   const reduce=useReducedMotion();
   const rail=useRef<HTMLDivElement>(null);const gesture=useRef({x:0,y:0,drag:false});
   const [hoverId,setHoverId]=useState<string|null>(null);const [focusId,setFocusId]=useState<string|null>(null);const active=focusId||hoverId;const [position,setPosition]=useState({left:true,right:false});
@@ -58,7 +57,7 @@ export default function Portfolio({open}:{open:(o:Overlay)=>void}) {
     <section aria-label="Selected projects" className={styles.projectSection}>
       <div className={styles.railHeader}><span><Text text="SIX PROJECTS. DIFFERENT POSSIBILITIES." delay={.35}/></span><div><span><Text text="SCROLL TO EXPLORE" delay={.4}/></span><button onClick={()=>rail.current?.scrollBy({left:-300,behavior:reduce?'auto':'smooth'})} disabled={position.left} aria-label="Previous projects"><Text text="←"/></button><button onClick={()=>rail.current?.scrollBy({left:300,behavior:reduce?'auto':'smooth'})} disabled={position.right} aria-label="Next projects"><Text text="→"/></button></div></div>
       <div ref={rail} className={styles.rail} onScroll={syncPosition} onPointerDown={e=>{gesture.current={x:e.clientX,y:e.clientY,drag:false};}} onPointerMove={e=>{if(e.buttons && Math.hypot(e.clientX-gesture.current.x,e.clientY-gesture.current.y)>8)gesture.current.drag=true;}} onPointerCancel={()=>{gesture.current.drag=true;}}>
-        {projects.map(p=><Cover key={p.id} project={p} activate={(id,mode)=>{if(mode==='focus')setFocusId(id);else setHoverId(id);}} open={open} isDragging={()=>gesture.current.drag}/>)}
+        {projects.map(p=><Cover key={p.id} project={p} activate={(id,mode)=>{if(mode==='focus')setFocusId(id);else setHoverId(id);}} isDragging={()=>gesture.current.drag}/>)}
       </div>
       <div className={styles.descriptionRegion} aria-hidden="true"><span><Text text={project?String(project.order).padStart(2,'0'):'↗'}/></span><div><h3><Text text={project?.title || 'A closer look starts here.'}/></h3><p><Text text={project?.description || 'Hover or focus a cover to explore the project. Open a cover to read the PDF.'}/></p></div><span className={styles.descriptionLabel}><Text text={project?'PROJECT NOTE':'EXPLORE'}/></span></div>
     </section>
