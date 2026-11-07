@@ -20,7 +20,7 @@ export default function Home({ open }: { open:(overlay:Overlay)=>void }) {
       <p className={styles.introKicker}><FoldText text="A PERSONAL COLLECTION" splitBy="word" duration={.45} stagger={.065}/></p><div><h1><FoldText text="FU.STUDIO" splitBy="char" foldStyle="paper" hinge="top" delay={.2} duration={1} stagger={.085} hoverRefold refoldAngle={68} refoldRadius={150} creaseShading={.5}/></h1><p><FoldText text="Personal Website" splitBy="word" delay={1.05} duration={.65} stagger={.12}/></p></div><button onClick={()=>finish(true)}><FoldText text="Skip intro" splitBy="word" delay={0} duration={.35} stagger={.04}/> <span>↗</span></button><div className={styles.introProgress}/>
     </motion.div>}</AnimatePresence>
     <main id="main" className={styles.home} inert={intro}><h1 className="sr-only">FU.STUDIO — Designer &amp; Maker</h1>
-      <header className={styles.homeHeader}><a href="#main" className={styles.wordmark}>FU.STUDIO<span>DESIGNER & MAKER</span></a><span className={styles.headerNote}>A work in progress.<br/>A collection of possibilities.</span><span className={styles.edition}>PERSONAL WEBSITE<br/>2024 — 2026</span></header>
+      <header className={styles.homeHeader}><a href="#main" className={styles.wordmark}><img className={styles.brandIcon} src="/brand-icon.svg" width="44" height="44" alt=""/><div>FU.STUDIO<span>DESIGNER & MAKER</span></div></a><span className={styles.headerNote}>A work in progress.<br/>A collection of possibilities.</span><span className={styles.edition}>PERSONAL WEBSITE<br/>2024 — 2026</span></header>
       <BoardMotion><div className={styles.scene}>
         <img className={styles.sceneImage} src={media('board.webp')} alt="" fetchPriority="high" />
         <div className={styles.board}>
