@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b2d63"/><text x="10" y="44" font-family="Arial,sans-serif" font-weight="bold" font-size="34" fill="#f5f1e8">FU</text></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" role="img" aria-labelledby="title desc">
+  <title id="title">FU.Studio</title>
+  <desc id="desc">Black rounded-square icon with a white geometric FU monogram and a violet dot.</desc>
+  <rect x="11" y="11" width="1231" height="1231" rx="258" fill="#000000"/>
+  <path d="M 241 408 L 230 428 L 221 452 L 216 474 L 214 497 L 214 931 L 347 805 L 348 648 L 571 647 L 573 649 L 573 724 L 576 769 L 585 804 L 598 833 L 621 866 L 644 889 L 661 902 L 681 914 L 718 929 L 747 935 L 774 937 L 858 936 L 892 930 L 922 919 L 938 911 L 962 895 L 988 871 L 1014 835 L 1024 815 L 1033 789 L 1039 752 L 1038 485 L 905 510 L 905 735 L 901 757 L 890 779 L 869 801 L 846 814 L 820 820 L 785 819 L 770 815 L 755 808 L 743 800 L 727 784 L 714 761 L 709 739 L 709 528 L 349 529 L 347 527 L 347 496 L 350 483 L 355 473 L 372 454 L 395 443 L 714 442 L 804 323 L 385 323 L 367 325 L 334 334 L 299 351 L 267 376 L 250 395 Z" fill="#FFFFFF" />
+  <defs>
+    <radialGradient id="violet" cx="36%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#8A32FF"/>
+      <stop offset="100%" stop-color="#6720E8"/>
+    </radialGradient>
+  </defs>
+  <circle cx="465.5" cy="841.5" r="72.5" fill="url(#violet)"/>
+</svg>
